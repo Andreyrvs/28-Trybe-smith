@@ -17,6 +17,16 @@ class ProductController {
       next(err);
     }
   };
+
+  public getAll = async (__req: Request, res:Response, next: NextFunction) => {
+    try {
+      const result = await this.productService.getAll();
+
+      return res.status(HttpStatus.OK).json(result);
+    } catch (err) {
+      next(err);
+    }
+  };
 }
 
 export default ProductController;
