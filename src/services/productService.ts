@@ -14,6 +14,12 @@ class ProductService {
 
     return result;
   };
+
+  public getAll = async () => {
+    const result = await this.productModel.getAll();
+
+    return result;
+  };
 }
 
 export default ProductService;
