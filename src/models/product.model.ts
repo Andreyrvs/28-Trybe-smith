@@ -23,6 +23,14 @@ class ProductModel {
     const newProduct: IProduct = { id, name, amount };
     return newProduct || null;
   };
+
+  public getAll = async (): Promise<IProduct[]> => {
+    const query = `SELECT * FROM ${databaseProducts}`;
+
+    const [result] = await this.connection.execute(query);
+
+    return result as IProduct[];
+  };
 }
 
 export default ProductModel;
