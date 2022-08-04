@@ -1,7 +1,6 @@
 import { Request, Response, NextFunction } from 'express';
 import HttpStatus from '../enums/HttpStatus';
 import IProduct from '../interface/IProduct';
-// import IProduct from '../interface/IProduct';
 import ProductService from '../services/productService';
 
 class ProductController {
