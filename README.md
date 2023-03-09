@@ -24,10 +24,14 @@ Back-end:
 
 Adquiri essas habilidades ao desenvolver esse projeto:
 
-<!-- ## Preview da Aplicação
+- Declarar variáveis e funções com tipagens Typescript;
 
-| ![Login](./aplicacao-) | ![Home](./aplicacao-) |
-| ----------- | ----------- | -->
+- Construir uma API Node Express utilizando o Typescript;
+
+## Preview da Aplicação
+
+| ![Login](./aplicacao-) | ![DER](./aplicacao-der.png) |
+| ----------- | ----------- |
 
 ## Instalando Dependências
 
@@ -37,10 +41,23 @@ Adquiri essas habilidades ao desenvolver esse projeto:
   git clone git@github.com:Andreyrvs/28-trybe-smith.git
   ```
 
+> Docker
+
+  :heavy_exclamation_mark: Rode os serviços **node** e **database** com o comando.
+
+  ```bash
+  docker-compose up -d
+  ```
+
+  > Esses serviços irão inicializar um container chamado `trybesmith` e outro chamado `trybesmith_db`.
+
+  ```bash
+  docker exec -it trybesmith bash
+  ```
+
   > Back-end
 
   ```bash
-  cd api/ 
   npm install
   ```
 
