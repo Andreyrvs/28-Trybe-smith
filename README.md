@@ -18,7 +18,7 @@ Colegas que contribuíram para a realização do projeto:
 ## Técnologias usadas
 
 Back-end:
-> Desenvolvido usando: NodeJS, ExpressJS, MYSQL, ES6, JWT
+> Desenvolvido usando: Typescript, Node.js, Express.js, MYSQL, JWT
 
 ## Habilidades
 
@@ -30,8 +30,9 @@ Adquiri essas habilidades ao desenvolver esse projeto:
 
 ## Preview da Aplicação
 
+| | Diagrama DER |
+| :---: | :---: |
 | ![Login](./aplicacao-) | ![DER](./aplicacao-der.png) |
-| ----------- | ----------- |
 
 ## Instalando Dependências
 
@@ -66,13 +67,5 @@ Adquiri essas habilidades ao desenvolver esse projeto:
 - Para rodar o Back-end:
 
   ```bash
-  cd api/ && npm start
-  ```
-
-## Executando Testes
-
-- Para rodar todos os testes:
-
-  ```bash
-  npm test
+  npm start
   ```
