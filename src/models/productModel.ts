@@ -1,7 +1,7 @@
 import { Pool, ResultSetHeader } from 'mysql2/promise';
 import IProduct from '../interface/IProduct';
 
-const databaseProducts = 'Trybesmith.Products';
+const databaseProducts = 'railway.Products';
 
 class ProductModel {
   public connection: Pool;
