@@ -32,7 +32,7 @@ Adquiri essas habilidades ao desenvolver esse projeto:
 
 | | Diagrama DER |
 | :---: | :---: |
-| ![Login](./aplicacao-) | ![DER](./aplicacao-der.png) |
+| ![HOME](./aplicacao-home.png) | ![DER](./aplicacao-der.png) |
 
 ## Instalando Dependências
 
