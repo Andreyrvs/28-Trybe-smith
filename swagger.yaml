@@ -45,10 +45,31 @@ paths:
       tags:
         - Products
       summary: Todos Produtos
-      description: Retorna um objeto com dados de tempo
+      description: Retorna todos produtos da loja
       responses:
         '200':
           description: Operação bem sucedida
+          content:
+            application/json:
+              schema:
+                tipe: array
+                items:
+                  $ref: '#/components/schemas/Products'
+
+    post:
+      tags:
+        - Products
+      summary: Cria Produtos
+      description: Cria um produto para a loja
+      requestBody:
+        description: Insira o Usuário com respectivos dados
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/NewProducts'
+      responses:
+        '201':
+          description: Created
           content:
             application/json:
               schema:
@@ -87,3 +108,22 @@ components:
         orderId:
           type: integer
           example: 1
+
+    NewProducts:
+      type: object
+      properties:
+        name:
+          type: string
+          example: Espada curta
+        amount:
+          type: string
+          example: 10 peças de ouro
+
+  requestBodies:
+    NewProducts:
+      description: Use o objeto com **name** e **amount**.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/NewProducts'
+      required: true
