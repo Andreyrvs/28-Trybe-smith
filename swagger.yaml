@@ -11,16 +11,25 @@ info:
     - [Repositorio TrybeSmith API](https://github.com/Andreyrvs/28-trybe-smith)
   contact:
     email: cortaesai@gmail.com
-    name: Andrey
+    name: Andrey R. Visniewski
     url: https://www.linkedin.com/in/andreyrv/
 servers:
   - url: http://localhost:3000/
   - url: https://28-trybe-smith-production.up.railway.app/
+tags:
+  - name: Health
+    description: Endpoints related to health
+  - name: Products
+    description: Endpoints related to products
+  - name: Orders
+    description: Endpoints related to
+
+
 paths:
   /health:
     get:
       tags:
-        - health
+        - Health
       summary: Status da API
       description: Retorna um objeto com dados de tempo
       responses:
@@ -30,6 +39,22 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Health'
+
+  /products:
+    get:
+      tags:
+        - Products
+      summary: Todos Produtos
+      description: Retorna um objeto com dados de tempo
+      responses:
+        '200':
+          description: Operação bem sucedida
+          content:
+            application/json:
+              schema:
+                tipe: array
+                items:
+                  $ref: '#/components/schemas/Products'
 
 
 components:
@@ -46,3 +71,19 @@ components:
         timestamp:
           type: string
           example: 2023-03-03T23:31:51.184Z
+
+    Products:
+      type: object
+      properties:
+        id:
+          type: integer
+          example: 1
+        name:
+          type: string
+          example: Espada curta
+        amount:
+          type: string
+          example: 10 peças de ouro
+        orderId:
+          type: integer
+          example: 1
