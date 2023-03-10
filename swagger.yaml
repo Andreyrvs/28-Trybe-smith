@@ -1,0 +1,48 @@
+openapi: 3.0.3
+info:
+  title: TrybeSmith API - OpenAPI 3.0
+  version: 1.0.0
+  description: >-
+    Loja de itens medievais no formato de uma api usando TypeScript. Sendo possivel realizar o CRUD.
+
+
+    Alguns links úteis:
+
+    - [Repositorio TrybeSmith API](https://github.com/Andreyrvs/28-trybe-smith)
+  contact:
+    email: cortaesai@gmail.com
+    name: Andrey
+    url: https://www.linkedin.com/in/andreyrv/
+servers:
+  - url: http://localhost:3000/
+  - url: https://28-trybe-smith-production.up.railway.app/
+paths:
+  /health:
+    get:
+      tags:
+        - health
+      summary: Status da API
+      description: Retorna um objeto com dados de tempo
+      responses:
+        '200':
+          description: Operação bem sucedida
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Health'
+
+
+components:
+  schemas:
+    Health:
+      type: object
+      properties:
+        uptime:
+          type: integer
+          example: 7.076872259
+        message:
+          type: string
+          example: OK
+        timestamp:
+          type: string
+          example: 2023-03-03T23:31:51.184Z
