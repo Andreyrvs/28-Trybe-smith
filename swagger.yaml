@@ -21,8 +21,10 @@ tags:
     description: Endpoints related to health
   - name: Products
     description: Endpoints related to products
+  - name: Users
+    description: Endpoints related to Users
   - name: Orders
-    description: Endpoints related to
+    description: Endpoints related to Orders
 
 
 paths:
@@ -77,9 +79,50 @@ paths:
                 items:
                   $ref: '#/components/schemas/Products'
 
+  /users:
+    post:
+      tags:
+        - Users
+      summary: Cria Usuários
+      description: Cria um usuario para a loja
+      requestBody:
+        description: Insira o Usuário com respectivos dados
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/NewUsers'
+      responses:
+        '201':
+          description: Created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Token'
 
+  /orders:
+    get:
+      tags:
+        - Orders
+      summary: Todas as vendas
+      description: Retorna todas vendas da loja
+      responses:
+        '200':
+          description: Operação bem sucedida
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Orders'
 components:
   schemas:
+    Token:
+      type: object
+      properties:
+        token:
+          type: string
+          example: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Ik1BWCIsImNsYXNzZSI6InN3b3Jkc21hbiIsImxldmVsIjoxMCwiaWF0IjoxNjc4NzM3MzYwfQ.PLQUC4povORjXfibNCdNad4GJRp6uNg60AipKLr0xvA
+  
     Health:
       type: object
       properties:
@@ -118,6 +161,45 @@ components:
         amount:
           type: string
           example: 10 peças de ouro
+
+    NewUsers:
+      type: object
+      required:
+        - username
+        - classe
+        - level
+        - password
+      properties:
+        username:
+          type: string
+          example: MAX
+        classe:
+          type: string
+          example: swordsman
+        level:
+          type: string
+          example: 10
+        password:
+          type: string
+          example: SavingPeople
+
+    Orders:
+      type: object
+      properties:
+        id:
+          type: integer
+          example: 1
+        userId:
+          type: integer
+          example: 1
+        productsIds:
+          type: array
+          items:
+            type: integer
+          example: 
+            - 1
+            - 3
+            - 5
 
   requestBodies:
     NewProducts:
