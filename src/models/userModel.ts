@@ -1,7 +1,7 @@
 import { Pool, ResultSetHeader } from 'mysql2/promise';
 import IUser from '../interface/IUser';
 
-const databaseUser = 'railway.Users';
+const databaseUser = 'trybesmith.Users';
 
 class UserModel {
   public connection: Pool;
