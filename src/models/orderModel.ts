@@ -1,6 +1,6 @@
 import { Pool } from 'mysql2/promise';
 
-const database = 'railway';
+const database = 'trybesmith';
 
 class OrderModel {
   public connection: Pool;
